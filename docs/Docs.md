@@ -38,6 +38,7 @@
 - [C++ examples](https://github.com/SanderMertens/flecs/tree/master/examples/cpp)
 - [C# examples](https://github.com/BeanCheeseBurrito/Flecs.NET/tree/main/src/Flecs.NET.Examples)
 - [Rust examples](https://github.com/Indra-db/Flecs-Rust/tree/main/flecs_ecs/examples/flecs)
+- [Java examples](https://github.com/elebras1/flecs-java/tree/main/examples/src/main/java/io/github/elebras1/flecs/examples)
 
 ## Videos
 - [Setting Up The Project (E1)](https://www.youtube.com/watch?v=O632xG7ItL8)
