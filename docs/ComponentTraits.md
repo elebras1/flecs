@@ -304,8 +304,8 @@ world.remove_all_id((flecs::Wildcard::ID, archer));
 
 ```java
 world.removeAll(archer);
-world.removeAll(world.pair(archer, Flecs.Wildcard).id());
-world.removeAll(world.pair(Flecs.Wildcard, archer).id());
+world.removeAll(world.pair(archer, Flecs.Wildcard));
+world.removeAll(world.pair(Flecs.Wildcard, archer));
 ```
 
 </li>
@@ -561,7 +561,7 @@ p.destruct();
 world.obtainEntity(Flecs.ChildOf).add(Flecs.OnDeleteTarget, Flecs.Delete);
 
 Entity p = world.obtainEntity(world.entity());
-Entity e = world.obtainEntity(world.entity()).add(Flecs.ChildOf, p.id());
+Entity e = world.obtainEntity(world.entity()).add(Flecs.ChildOf, p);
 
 // This will delete both p and e
 p.destruct();
@@ -1148,10 +1148,10 @@ Entity apples = world.obtainEntity(world.entity()).childOf(food);
 Entity fork = world.obtainEntity(world.entity());
 
 // This is ok, Apples is a child of Food
-Entity a = world.obtainEntity(world.entity()).add(food, apples.id());
+Entity a = world.obtainEntity(world.entity()).add(food, apples);
 
 // This is not ok, Fork is not a child of Food
-Entity b = world.obtainEntity(world.entity()).add(food, fork.id());
+Entity b = world.obtainEntity(world.entity()).add(food, fork);
 ```
 
 </li>
@@ -1244,10 +1244,10 @@ Entity apples = world.obtainEntity(world.entity()).childOf(food);
 Entity fork = world.obtainEntity(world.entity());
 
 // This is ok, Apples is a child of Food
-Entity a = world.obtainEntity(world.entity()).add(eats, apples.id());
+Entity a = world.obtainEntity(world.entity()).add(eats, apples);
 
 // This is not ok, Fork is not a child of Food
-Entity b = world.obtainEntity(world.entity()).add(eats, fork.id());
+Entity b = world.obtainEntity(world.entity()).add(eats, fork);
 ```
 
 </li>
@@ -2271,7 +2271,7 @@ long marriedTo = world.entity();
 world.obtainEntity(marriedTo).add(Flecs.Symmetric);
 Entity bob = world.obtainEntity(world.entity());
 Entity alice = world.obtainEntity(world.entity());
-bob.add(marriedTo, alice.id()); // Also adds (MarriedTo, Bob) to Alice
+bob.add(marriedTo, alice); // Also adds (MarriedTo, Bob) to Alice
 ```
 
 </li>
@@ -2686,7 +2686,7 @@ Entity loves = world.obtainEntity(world.entity()).add(Flecs.With, likes);
 long pears = world.entity();
 
 // Create new entity with both (Loves, Pears) and (Likes, Pears)
-Entity e = world.obtainEntity(world.entity()).add(loves.id(), pears);
+Entity e = world.obtainEntity(world.entity()).add(loves, pears);
 ```
 
 </li>
